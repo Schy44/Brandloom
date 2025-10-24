@@ -15,12 +15,7 @@ export default function Header() {
             </Link>
             {/* Logo End */}
 
-            {/* Navbar Toggle Start */}
-            <input type="checkbox" id="navbar-toggle" className="navbar-toggle-checkbox" />
-            <label htmlFor="navbar-toggle" className="navbar-toggle-label">
-              <span className="navbar-toggler-icon"></span>
-            </label>
-            {/* Navbar Toggle End */}
+
 
             {/* Main Menu Start */}
             <div className="main-menu">

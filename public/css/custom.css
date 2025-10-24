@@ -383,7 +383,7 @@ body{
 }
 
 .section-title h2{
-	font-size: 50px;
+	font-size: 60px; /* Reverted font size */
 	font-weight: 300;
 	line-height: 1.2em;
 	color: var(--primary-color);
@@ -1094,6 +1094,7 @@ body:has(.offcanvas){
 	line-height: 1.2em;
 	color: var(--dark-color);
 	vertical-align: middle;
+	white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .scrolling-content span img{

@@ -1,26 +1,83 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color: #ffffff; /* Light mode background */
+  --text-color: #333333; /* Light mode text */
+  --app-primary-color: #0070f3; /* My original primary color */
+
+  /* Variables from custom.css (Light Mode) */
+  --site-primary-color: #FFFFFF;
+  --site-secondary-color: #1B1B1B;
+  --site-text-color: #F5F5F4;
+  --site-accent-color: #BFF747;
+  --site-dark-color: #000000;
+  --site-divider-color: #FFFFFF1A;
+  --site-dark-divider-color: #F7FBFA1A;
+  --site-error-color: rgb(230, 87, 87);
+  --default-font: "Fustat", sans-serif;
+
+  /* Additional variables for light mode */
+  --heading-color: #212529;
+  --border-color: #dee2e6;
+  --card-background: #ffffff;
+  --card-border: #e0e0e0;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background-color: #1a202c; /* Dark mode background */
+  --text-color: #e2e8f0; /* Dark mode text */
+  --app-primary-color: #90cdf4; /* My original primary color in dark mode */
+
+  /* Variables from custom.css (Dark Mode equivalents - inferred/guessed) */
+  --site-primary-color: #1B1B1B; /* Inverted from light */
+  --site-secondary-color: #FFFFFF; /* Inverted from light */
+  --site-text-color: #1B1B1B; /* Inverted from light */
+  --site-accent-color: #BFF747; /* Accent color might stay the same or be slightly adjusted */
+  --site-dark-color: #FFFFFF; /* Inverted from light */
+  --site-divider-color: #1B1B1B1A; /* Inverted from light */
+  --site-dark-divider-color: #1B1B1B1A; /* Inverted from light */
+  --site-error-color: rgb(255, 120, 120); /* Slightly lighter error color */
+
+  /* Additional variables for dark mode */
+  --heading-color: #f7fafc;
+  --border-color: #4a5568;
+  --card-background: #2d3748;
+  --card-border: #4a5568;
+  --link-color: #63b3ed;
+  --link-hover-color: #3182ce;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@tailwind base;
+
+html, body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif; /* Keep the font family */
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
 }
+
+html.light * {
+  color: var(--text-color) !important;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: var(--heading-color) !important;
+}
+
+.work-process-no h2 {
+  color: var(--heading-color); /* Default to dark color in light mode */
+}
+
+.dark .work-process-no h2 {
+  color: var(--site-accent-color); /* Use accent color in dark mode */
+}
+
+/* .text-anime-style-2 styles removed as AnimatedText is no longer used for this element */

@@ -26,8 +26,8 @@ export default function AnimatedText({ text, className, dataCursor }: AnimatedTe
   }, []);
 
   return (
-    <h1 className={className} data-cursor={dataCursor} ref={textRef}>
+    <h2 className={className} data-cursor={dataCursor} ref={textRef}>
       {text}
-    </h1>
+    </h2>
   );
 }
